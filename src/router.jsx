@@ -6,6 +6,7 @@ import Compteur from './compteur/Page';
 import ErreurNavigation from './ErreurNavigation';
 import { Suspense, lazy } from 'react';
 import { Spinner } from 'react-bootstrap';
+import Bottin from './bottin/Bottin';
 
 const Contact = lazy(() => import('./contact/Contact'));
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: 'compteur',
         element: <Compteur />,
+      },
+      {
+        path: 'bottin',
+        element: <Bottin />,
       },
     ],
   },

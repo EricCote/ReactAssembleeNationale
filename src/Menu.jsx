@@ -25,6 +25,9 @@ function Menu() {
             <Nav.Link as={NavLink} to='/compteur'>
               Compteur
             </Nav.Link>
+            <Nav.Link as={NavLink} to='/bottin'>
+              Bottin
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
