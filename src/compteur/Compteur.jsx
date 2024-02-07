@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 
 //Hook: Fonctionalité de React, exposé via une fonction
@@ -15,15 +15,17 @@ import { Button } from 'react-bootstrap';
 //           2. va provoquer un re-render
 
 export default function Compteur() {
-  const [compte, setCompte] = useState(0);
+  const [compte, setCompte] = useState(
+    () => +(localStorage.getItem('compte') ?? '0')
+  );
+
   return (
     <div>
       <h3>Le compte est: {compte}</h3>
       <Button
         onClick={() => {
-          setCompte((prevCompte) => prevCompte + 1);
-          setCompte((prevCompte) => prevCompte + 1);
-          setCompte((prevCompte) => prevCompte + 1);
+          localStorage.setItem('compte', compte + 1);
+          setCompte(compte + 1);
         }}
       >
         Incrémenter
